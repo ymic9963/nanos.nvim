@@ -1,2 +1,2 @@
 # nanos.nvim
-Neovim colorscheme with dark and light modes
+Neovim colorscheme with dark and light modes.

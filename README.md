@@ -3,7 +3,7 @@
 ![Lua badge](https://img.shields.io/badge/Made%20with-Lua-purple?logo=lua&color=%23000080&link=https%3A%2F%2Flua.org%2F)
 ![MIT license](https://img.shields.io/badge/License-MIT-blue?link=https%3A%2F%2Fmit-license.org%2F)
 
-Neovim colorscheme with dark and light modes. Main inspirations are these four colours #ffc777, #fca7ea, #4fd633, #65bcff, and  [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim).
+Neovim colorscheme with dark and light modes. Uses native, treesitter, and LSP highlight groups. Main inspirations are these four colours #ffc777, #fca7ea, #4fd633, #65bcff, and  [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim).
 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ce467d6c-72e4-4870-9e78-e1c5a7b52e61" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/91370a9e-1c96-4191-9b50-52fb08a1e46a" />

@@ -19,7 +19,7 @@ local palettes = {
         light_blue = "#c8d3f5",
         purple = "#9d33ff",
         pink = "#fca7ea",
-        dark_red = "#400000",
+        dark_red = "#773c3c",
         orange1 = "#ff966c",
         orange2 = "#ffc777",
         brown = "#402a00",
@@ -70,7 +70,7 @@ local colors = {
     constant = palette.orange1,
     comment = palette.grey1,
     keyword = palette.purple,
-    preproc = vim.o.background == "dark" and palette.blue2 or palette.blue3,
+    preproc = palette.purple,
     string = palette.yellow,
     visual = palette.grey2,
     cursorline = palette.grey3,
@@ -106,8 +106,8 @@ local highlights = {
     Special = { fg = colors.special },
 
     -- General
-    Normal = { fg = colors.fg, bg = colors.bg },
-    EndOfBuffer = { fg = colors.bg },
+    Normal = { fg = colors.fg, bg = colors.bg }, -- Background and text
+    EndOfBuffer = { fg = colors.bg }, -- Dashes at end of file
     Title = { fg = colors.fg, bold = true },
     Visual = { bg = colors.visual },
     CursorLine = { bg = colors.cursorline, fg = "NONE" },
@@ -136,29 +136,30 @@ local highlights = {
     SignColumn = { fg = colors.linenr, bg = colors.bg },
 
     -- Popup menu
-    Pmenu = { bg = colors.visual, fg = colors.pmenufg, bold = true },
-    PmenuSel = { bg = colors.bg, fg = colors.type },
-    PmenuSbar = { bg = colors.comment },
-    PmenuThumb = { bg = colors.pemnufg },
+    Pmenu = { bg = colors.visual, fg = colors.pmenufg, bold = true },  -- Popup menu font and Background
+    PmenuSel = { bg = colors.type, fg = colors.bg }, -- Popup menu selection highlight and text highlight when selected
+    PmenuSbar = { bg = colors.comment }, -- Popup menu scroll background
+    PmenuThumb = { bg = colors.comment }, -- Popup menu scroll thing
     PmenuMatch = { bg = "NONE", fg = colors.type },
+    PmenuMatchSel = { bg = "NONE", fg = colors.bg },
     PmenuKind = { fg = colors.constant },
 
     -- Tabline
     TabLine = { bg = colors.bg, fg = colors.linenr },
-    TabLineSel = { bg = colors.preproc, fg = colors.bg, bold = true },
+    TabLineSel = { bg = colors.type, fg = colors.bg, bold = true },
     TabLineFill = {},
 
     -- Special comments
-    TODO = { bg = "NvimLightCyan", fg = colors.fg },
-    INFO = { bg = "NvimLightBlue", fg = colors.fg },
-    FIX = { bg = "NvimLightMagenta", fg = colors.fg },
-    BUG = { bg = "NvimLightRed", fg = colors.fg },
-    NOTE = { bg = "NvimLightYellow", fg = colors.fg },
+    TODO = { bg = "NvimLightCyan", fg = "Black" },
+    INFO = { bg = "NvimLightBlue", fg = "Black" },
+    FIX = { bg = "NvimLightMagenta", fg = "Black" },
+    BUG = { bg = "NvimLightRed", fg = "Black" },
+    NOTE = { bg = "NvimLightYellow", fg = "Black" },
 
     -- Treesitter: general
-    ["@operator"] = { fg = colors.preproc },
-    ["@punctuation"] = { fg = colors.linenr },
-    ["@punctuation.special"] = { fg = colors.puncspcial },
+    ["@operator"] = { fg = colors.type },
+    ["@punctuation"] = { fg = colors.linenr }, -- Brackets
+    ["@punctuation.special"] = { fg = colors.puncspcial }, -- Exclamation marks
     ["@variable"] = { fg = colors.variable },
     ["@variable.member"] = { fg = colors.varmember },
     ["@variable.parameter"] = { fg = colors.varparam },

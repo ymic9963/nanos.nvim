@@ -1,6 +1,7 @@
 -- Nanos colorscheme
 -- Started from these four colours in dark mode: #ffc777, #fca7ea, #4fd633, #65bcff
 
+-- TODO: variable colours in light mode should be black like how the variable colors in dark mode are almost white
 vim.cmd("highlight clear")
 if vim.fn.exists("syntax_on") == 1 then
     vim.cmd("syntax reset")
@@ -80,11 +81,11 @@ local colors = {
     diffchange = palette.brown,
     diffdelete = palette.dark_red,
     statusline = vim.o.background == "dark" and palette.white or palette.grey1,
-    linenr = palette.grey4,
-    curslinenr = palette.grey1,
+    linenr = vim.o.background == "dark" and palette.grey4 or palette.grey1,
+    curslinenr = palette.grey5,
     pmenufg = palette.grey5,
     puncspcial = palette.dark_red,
-    variable = palette.light_blue,
+    variable = vim.o.background == "dark" and palette.light_blue or palette.grey4,
     varmember = palette.green,
     varparam = palette.orange2,
     property = palette.green,

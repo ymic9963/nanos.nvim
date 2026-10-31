@@ -5,8 +5,8 @@
 
 Neovim colorscheme with dark and light modes. Main inspirations are these four colours #ffc777, #fca7ea, #4fd633, #65bcff, and  [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim).
 
-<img width="1920" height="1080" alt="nanos dark" src="https://github.com/user-attachments/assets/1361bf31-82c3-459a-9c9f-b8ac623b1ae0" />
-<img width="1920" height="1080" alt="nanos light" src="https://github.com/user-attachments/assets/8346b60c-bcb4-4a52-85c0-c77fb8dfb4da" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ce467d6c-72e4-4870-9e78-e1c5a7b52e61" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/91370a9e-1c96-4191-9b50-52fb08a1e46a" />
 
 ## Install
 Made on Neovim 0.12+ but should work on lower versions. Use `vim.pack` to install,

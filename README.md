@@ -21,3 +21,21 @@ vim.opt.background = "dark" -- optional
 vim.cmd.colorscheme("nanos")
 ```
 Change the background option to use either the dark (default) or light versions, and you can also change it while using Neovim by executing `:set background=light`.
+
+## Special Highlights
+This colorscheme provides some special highlight groups to emphasize these words/phrases `TODO`, `INFO`, `FIX`, `BUG`, and `NOTE`. To use these special highlights add the following to your config,
+```lua
+vim.api.nvim_create_autocmd("WinEnter", {
+    pattern = { "*" },
+    group = vim.api.nvim_create_augroup("Config", { clear = true }),
+    callback = function()
+        vim.fn.matchadd("TODO", 'TODO:')
+        vim.fn.matchadd("INFO", 'INFO:')
+        vim.fn.matchadd("FIX", 'FIX:')
+        vim.fn.matchadd("BUG", 'BUG:')
+        vim.fn.matchadd("NOTE", 'NOTE:')
+    end,
+    desc = "Make the matches for the nanos colorscheme Special Comments at every window"
+})
+```
+Make sure the `group` key uses you own augroup if you have one. Now you can add comments with these words/phrases anywhere and they will be highlighted accordingly. This was inspired by [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim) but done through highlight groups and not an actual plugin.

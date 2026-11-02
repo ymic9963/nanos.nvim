@@ -145,6 +145,9 @@ local highlights = {
     PmenuMatchSel = { bg = "NONE", fg = colors.bg },
     PmenuKind = { fg = colors.constant },
 
+    -- Floating windows
+    NormalFloat = { bg = colors.visual, fg = colors.pmenufg },
+
     -- Tabline
     TabLine = { bg = colors.bg, fg = colors.linenr },
     TabLineSel = { bg = colors.type, fg = colors.bg, bold = true },
@@ -184,8 +187,14 @@ local highlights = {
 
     -- LSP
     ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.special },
+
+    -- nvim-treesitter-context
+    TreesitterContext = { bg = colors.bg, sp = colors.bg },
+    TreesitterContextBottom = { bg = colors.bg, sp = colors.comment, underline = true },
+    TreesitterContextLineNumberBottom = { bg = colors.bg, sp = colors.comment, underline = false },
 }
 
 for group, options in pairs(highlights) do
     vim.api.nvim_set_hl(0, group, options)
 end
+
